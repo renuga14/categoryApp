@@ -8,14 +8,14 @@ const Signup = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-
+  const apiUrl = process.env.REACT_APP_BACKEND_URL;
   const handleSignup = async (e) => {
     e.preventDefault();
 
     const newUser = { name, email, password };
 
     try {
-      const response = await fetch('http://localhost:5000/signup', {
+      const response = await fetch(`${apiUrl}/signup`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

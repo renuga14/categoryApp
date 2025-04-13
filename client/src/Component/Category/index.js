@@ -3,9 +3,9 @@ import './index.css';
 
 const Category = () => {
   const [category,setCategory] = useState([]);
-  
+  const apiUrl = process.env.REACT_APP_BACKEND_URL;
   useEffect(() => {
-    fetch("http://localhost:5000/categories", {
+    fetch(`${apiUrl}/categories`, {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`,
       },

@@ -6,12 +6,12 @@ const Login = () => {
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
   const history = useNavigate();
-
+  const apiUrl = process.env.REACT_APP_BACKEND_URL;
   const handleLogin = (e) => {
     e.preventDefault();
     // Basic validation 
     if (name && password) {
-      fetch('http://localhost:5000/login1', {
+      fetch(`${apiUrl}/login1`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email: name, password: password })
