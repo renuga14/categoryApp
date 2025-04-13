@@ -1,6 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const bcrypt = require('bcrypt'); // To hash the password
+const bcrypt = require('bcryptjs');
 const sql = require('mssql'); // Import the mssql package
 
 const cors = require('cors');
